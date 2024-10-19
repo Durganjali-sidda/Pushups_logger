@@ -23,7 +23,7 @@ def signup_post():
     if user:
         return redirect(url_for('auth.signup'))
 
-    new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, name=name, password=generate_password_hash(password, method='pbkdf2:sha256'))
     db.session.add(new_user)
     db.session.commit()
 
