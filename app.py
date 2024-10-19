@@ -1,4 +1,4 @@
-from pushups_logger import create_app
+from pushups_logger import create_app,db
 
 app = create_app()
 
